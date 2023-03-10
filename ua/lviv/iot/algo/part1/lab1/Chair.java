@@ -1,4 +1,5 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import lombok.*;
 
 @NoArgsConstructor
@@ -12,10 +13,10 @@ public class Chair {
     private int maxWeight;
     private String owner;
     private static Chair defaultChair = new Chair();
-  
-    public static Chair getInstance(){
+    public static Chair getInstance() {
         return defaultChair;
     }
+
     public void occupy(String owner) {
         this.owner = owner;
     }
@@ -23,12 +24,7 @@ public class Chair {
         this.owner = null;
     }
     public boolean isOccupied(){
-        if (this.owner == null) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.owner == null;
     }
 
     public static void main (String[] args){
