@@ -28,8 +28,7 @@ public class Chair {
     }
 
     public static void main (String[] args){
-        Chair[] chairs;
-        chairs = new Chair[4];
+        var chairs = new Chair[4];
         chairs[0] = new Chair();
         chairs[1] = new Chair(12, "bereza", 150, "Andriy");
         chairs[2] = getInstance();
@@ -37,9 +36,7 @@ public class Chair {
 
         int i = 0;
         do {
-            System.out.println(chairs[i]);
-            i++;
-
+            System.out.println(chairs[i++]);
         } while (i < chairs.length);
     }
 }
