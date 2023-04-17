@@ -1,15 +1,20 @@
-package ua.lviv.iot.algo.part1.lab3;
+package src.main.java.ua.lviv.iot.algo.part1.lab3;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @ToString(callSuper = true)
 @Getter
 @Setter
-public class FeedingTable extends Chair{
+@NoArgsConstructor
+class FeedingTable extends Chair {
     private int maxHeight;
     private int minHeight;
     private int currentHeight;
     private int childAge;
+
     public FeedingTable(
             int id,
             String material,
@@ -29,10 +34,20 @@ public class FeedingTable extends Chair{
 
     @Override
     public void adjustPosition(int value) {
-        if (value + this.currentHeight <= this.maxHeight ){
+        if (value + this.currentHeight <= this.maxHeight) {
             this.currentHeight += value;
         } else {
             this.currentHeight = this.maxHeight;
         }
+    }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", maxHeight, minHeight, currentHeight, childAge";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ", " + maxHeight + ", " + minHeight + ", " + currentHeight + ", " + childAge;
     }
 }

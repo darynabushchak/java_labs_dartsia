@@ -1,12 +1,16 @@
-package ua.lviv.iot.algo.part1.lab3;
+package src.main.java.ua.lviv.iot.algo.part1.lab3;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
-public class OfficeChair extends Chair{
+@NoArgsConstructor
+public class OfficeChair extends Chair {
     private String chairUpholstery;
     private int currentSlopeInDegrees;
+
     public OfficeChair(
             int id,
             String material,
@@ -24,4 +28,15 @@ public class OfficeChair extends Chair{
     public void adjustPosition(int value) {
         this.currentSlopeInDegrees += value;
     }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", chairUpholstery, currentSlopeInDegrees";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ", " + chairUpholstery + ", " + currentSlopeInDegrees;
+    }
+
 }
