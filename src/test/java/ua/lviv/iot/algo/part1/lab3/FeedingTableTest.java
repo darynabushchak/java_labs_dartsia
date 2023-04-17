@@ -1,12 +1,14 @@
-package ua.lviv.iot.algo.part1.lab3;
+package src.test.java.ua.lviv.iot.algo.part1.lab3;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class FeedingTableTest {
     FeedingTable feedingTable;
+
     @BeforeEach
     public void setUp() {
         feedingTable = new FeedingTable(20, "wood",
@@ -15,18 +17,20 @@ class FeedingTableTest {
     }
 
     @Test
-    void testAdjustPosition() {
+    public void testAdjustPosition() {
         int finalTiltAngle = feedingTable.getCurrentHeight() + 20;
         feedingTable.adjustPosition(20);
         assertEquals(finalTiltAngle, feedingTable.getCurrentHeight());
     }
+
     @Test
-    void testMaxAllowedValues() {
+    public void testMaxAllowedValues() {
         feedingTable.adjustPosition(245);
         assertEquals(feedingTable.getCurrentHeight(), feedingTable.getMaxHeight());
     }
+
     @Test
-    void testRelease() {
+    public void testRelease() {
         feedingTable.occupy("Daryna");
         assertEquals("Daryna", feedingTable.getOwner());
         feedingTable.release();
