@@ -1,0 +1,16 @@
+DentalChair
+material, maxWeight, owner, maxHeight, minHeight, currentHeight
+plastic, 100, Vedmid, 200, 50, 166
+plastic, 100, Vedmid, 200, 50, 166
+FeedingTable
+material, maxWeight, owner, maxHeight, minHeight, currentHeight, childAge
+wood, 147, Zhaba, 100, 70, 80, 2
+wood, 147, Zhaba, 100, 70, 80, 2
+OfficeChair
+material, maxWeight, owner, chairUpholstery, currentSlopeInDegrees
+poliester, 200, Zayets, vata, 87
+poliester, 200, Zayets, vata, 87
+RockingChair
+material, maxWeight, owner, currentSlopeInDegrees
+wood, 150, Bilka, 83
+wood, 150, Bilka, 83
